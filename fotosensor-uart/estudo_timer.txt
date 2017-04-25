@@ -1,0 +1,29 @@
+Como definir o numero de interrupçoes e o numero de timers no codigo pro PIC
+
+TCI = 0,5us
+PS = 1
+
+Pra 1,666ms = 1666us
+
+No Contagens = TempDesejado / TCI x PS
+No Contagens = 3332
+No Timer = 3332
+No Inter = 1
+(No Timer) * (No Inter) = No Contagens
+Vl. Inicial = (2^n) - (No Timer)
+Vl. Inicial = 62204
+OBS.: Vl. Inicial não pd ser menor que zero (< 0).
+--------------------------------------------------------------------
+CLK = 8MHz
+TCI = 0,5us
+
+TempDesejado = 3,333ms = 3333us
+No Contagens = 6666
+Vl. Inicial = 65536 - 6666 = 58870
+TMR0 = 5889 // Valor a ser carregado.
+
+Info Adicional:
+TempIniSistema = 36,136ms
+No Contagens = 6666+16 = 6682
+Vl. Inicial = 65536 - 6682 = 58854
+TMR0_Real = 58883
